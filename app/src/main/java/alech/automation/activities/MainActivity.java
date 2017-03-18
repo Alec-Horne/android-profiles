@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,9 @@ import android.widget.TextView;
 
 import alech.automation.R;
 import alech.automation.constants.ServiceConstants;
+import alech.automation.objects.Profile;
+import alech.automation.objects.ProfileSetter;
+import alech.automation.receivers.AutoStartReceiver;
 import alech.automation.receivers.HeadsetReceiver;
 import alech.automation.services.LocationFinder;
 
@@ -27,8 +31,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // get the users sdk version
+        int sdkVersion = Build.VERSION.SDK_INT;
+
         // request initial needed permissions
-        requestInitialPermissions();
+        if (sdkVersion >= 23) {
+            requestInitialPermissions();
+        }
 
         //TODO: try using google play geofencing instead of LocationFinder service
         // start location service to get latitude/longitude on location change
@@ -36,13 +45,20 @@ public class MainActivity extends AppCompatActivity {
         startService(intent);
 
 
-        Button mapButton = (Button) findViewById(R.id.searchMap);
-
-        mapButton.setOnClickListener(new View.OnClickListener(){
+        Button editProfileButton = (Button) findViewById(R.id.editProfile);
+        editProfileButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                startActivity(new Intent(MainActivity.this, EditProfilesActivity.class));
             }
         });
+
+        Button tabbedViewButton = (Button) findViewById(R.id.tabbedView);
+        tabbedViewButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, Main2Activity.class));
+            }
+        });
+
 
         BroadcastReceiver locationReceiver = new BroadcastReceiver() {
             @Override
@@ -66,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
         IntentFilter intentFilter = new IntentFilter(Intent.ACTION_HEADSET_PLUG);
         HeadsetReceiver headsetReceiver = new HeadsetReceiver();
         registerReceiver(headsetReceiver, intentFilter);
+
+        // register auto start receiver to start services on boot
+        intentFilter = new IntentFilter(Intent.ACTION_BOOT_COMPLETED);
+        AutoStartReceiver autoStartReceiver = new AutoStartReceiver();
+        registerReceiver(autoStartReceiver, intentFilter);
 
     }
 

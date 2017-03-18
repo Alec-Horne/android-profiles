@@ -10,10 +10,10 @@
     tools:context="alech.automation.activities.MainActivity">
 
     <Button
-        android:text="MAP"
+        android:text="Edit Profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/searchMap"
+        android:id="@+id/editProfile"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -36,5 +36,17 @@
         android:layout_toRightOf="@+id/latText"
         android:layout_toEndOf="@+id/latText"
         android:layout_marginTop="14dp" />
+
+    <Button
+        android:text="Tabbed View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="13dp"
+        android:id="@+id/tabbedView" />
 
 </RelativeLayout>

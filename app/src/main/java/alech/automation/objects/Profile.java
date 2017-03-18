@@ -21,7 +21,6 @@ public class Profile {
     private volume ringerVolume = volume.unchanged;
     private int mediaVolume = ProfileConstants.DEFAULT;
     private int screenBrightness = ProfileConstants.DEFAULT;
-    private status gps = status.unchanged;
     private status wifi = status.unchanged;
     private status bluetooth = status.unchanged;
     private status automaticBrightness = status.unchanged;
@@ -70,14 +69,6 @@ public class Profile {
 
     public void setScreenBrightness(int screenBrightness) {
         this.screenBrightness = screenBrightness;
-    }
-
-    public status getGps() {
-        return gps;
-    }
-
-    public void setGps(status gps) {
-        this.gps = gps;
     }
 
     public status getWifi() {
