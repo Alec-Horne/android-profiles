@@ -1,0 +1,7 @@
+#Sat Mar 18 01:25:40 EDT 2017
+base.0=C\:\\Users\\alech\\AndroidStudioProjects\\Automation\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a4aa95484890f40066249763d5d59696147a5aad
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\alech\\AndroidStudioProjects\\Automation\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_a828a76148a94c8e865470bae8b8226247f3cab0\\classes.dex
+base.1=C\:\\Users\\alech\\AndroidStudioProjects\\Automation\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_a828a76148a94c8e865470bae8b8226247f3cab0
+file.0=C\:\\Users\\alech\\AndroidStudioProjects\\Automation\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a4aa95484890f40066249763d5d59696147a5aad\\classes.dex

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Automation</string>
+    <string name="title_activity_maps">SearchMap</string>
+    <string name="title_activity_profiles">ProfilesActivity</string>
+</resources>
